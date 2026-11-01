@@ -219,6 +219,9 @@ def test_inversion_legend():
     assert "Dm:" in "".join(root.itertext())
     strokes = {e.get("stroke") for e in root.iter(f"{NS}line")}
     assert strokes == set(INVERSION_COLORS.values())
+    # Natural size, not 100%: in the app it sits in a flex row where 100% would shrink it.
+    assert root.get("width") == root.get("viewBox").split()[2]
+    assert root.get("height") == root.get("viewBox").split()[3]
 
 
 # --- 15-fret neck (extend-neck-to-15-frets) ------------------------------------

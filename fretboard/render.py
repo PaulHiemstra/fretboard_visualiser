@@ -404,7 +404,8 @@ def render_inversion_legend(triad: Triad) -> str:
     width, height = int(x), DOT_R * 2 + 4
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
-        f'width="100%" style="max-width:{width}px" role="img" aria-label="Inversion legend">'
+        # Fixed natural size: inside a flex row a 100% width collapses and shrinks the text.
+        f'width="{width}" height="{height}" role="img" aria-label="Inversion legend">'
         + "".join(parts)
         + "</svg>"
     )
