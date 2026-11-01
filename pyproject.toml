@@ -1,0 +1,20 @@
+[project]
+name = "fretboard-scale-visualiser"
+version = "0.1.0"
+description = "Compare C major with the other C modes on a guitar fretboard."
+requires-python = ">=3.12"
+dependencies = ["nicegui"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["fretboard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
